@@ -1,6 +1,6 @@
 ---
-title: Access Now Digital Security Helpline Documentation
-conf: confidential
+layout: home
+author_profile: true
 ---
 
 
