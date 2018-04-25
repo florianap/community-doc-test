@@ -1,0 +1,460 @@
+<h1 id="circumvention--anonimity-tools-list">Circumvention &amp; Anonimity tools list</h1>
+<h2 id="best-and-secure-circumvention-tools-tor-vpn-tails">Best and secure circumvention tools, Tor, VPN, Tails</h2>
+
+<h3 id="problem">Problem</h3>
+
+<ul>
+  <li>The traffic can be monitored by the government on different points of the
+path.</li>
+  <li>The client is suffering from online censorship.</li>
+</ul>
+
+<hr />
+
+<h3 id="solution">Solution</h3>
+
+<p>We need to understand the exact needs of the client, even if they have already
+mentioned a specific tool.</p>
+
+<p>There are different ways of circumventing Internet censorship, some of which
+provide additional layers of security. The tool that is most appropriate for the
+client depends on their threat model and their specific need.</p>
+
+<h4 id="initial-evaluation">Initial evaluation</h4>
+
+<p>We need to assess and understand the threats the client is facing, and evaluate
+how we can respond.</p>
+
+<h5 id="questions-for-the-client">Questions for the client</h5>
+
+<ul>
+  <li>What is the client’s primary need? Are they interested only in circumvention,
+or are privacy and anonymity also important?</li>
+  <li>What data is being censored that the client wants to view? What is the
+censorship context of his/her country?</li>
+  <li>What appropriate tools are available and work in their country?</li>
+  <li>In certain repressive regimes, the usage of VPNs or other tools might be
+illegal. If you are unsure, you can involve the policy team for guidance, and
+consult with Helpline management.</li>
+  <li>If the client is asking how to hide their identity:
+    <ul>
+      <li>We need to know what they want to hide: just IP location, internet navigation, or more?</li>
+      <li>Why do they need to hide their identity?</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="best-practices">Best Practices</h4>
+
+<p>These are best practices we should explain to the client:</p>
+
+<p>At first, we need to advise the client to use <strong>HTTPS</strong> - the secure version of
+the HTTP protocol used to access websites.</p>
+
+<p><a href="https://www.eff.org/https-everywhere">This HTTPS Everywhere plug-in may be an easy install</a></p>
+
+<p>In addition to the obvious benefits of HTTPS, there is a chance that the
+encrypted version of the site is not blocked.</p>
+
+<p>Check if the mobile and laptop website versions are both blocked.</p>
+
+<p>For example, instead of visiting https://twitter.com, the client could try to visit https://m.twitter.com,
+the mobile version of the site. Censors that block websites or web pages usually
+work from a blacklist of banned websites, so anything that is not on that
+blacklist will get through.</p>
+
+<p><strong>What follows is a list of some circumvention tools listed from a higher risk threat model to lower:</strong></p>
+
+<h4 id="circumvention--anonymity">Circumvention &amp; anonymity</h4>
+
+<h5 id="warning-for-every-tor-based-tool">Warning for every Tor-based tool</h5>
+
+<p>Before starting to use Tor, the client should check that their connections are
+really anonymised: https://check.torproject.org/</p>
+
+<p><a href="https://www.torproject.org/download/download.html.en#warning">More warnings</a></p>
+
+<p>What the client should know in a nutshell:</p>
+
+<ul>
+  <li>Don’t open documents downloaded through Tor while online. These documents can
+contain Internet resources that will be downloaded outside of Tor by the
+application that opens them.</li>
+  <li>Web browsing is much slower than through a normal browser or a VPN because
+your traffic is encrypted and relayed through the Tor network, but it shouldn’t
+be crippling. If you find it’s too slow, you can try to change the circuit in
+Tor Browser with Ctrl+Shift+L (with Orbot you can switch to a new identity by
+swiping from right to left or from left to right on the onion icon)  - 
+https://tor.stackexchange.com/questions/8673/tor-browser-bundle-tbb-new-circuit-versus-new-identity</li>
+  <li>Flash and many other features of websites won’t work, for example you may not
+be able to watch videos - this is a drawback, but enabling these features may
+compromise your anonymity. Some websites, including Youtube, support HTML5
+players when Flash is not supported by the browser and sometimes you can watch
+the video by switching to the <a href="https://www.youtube.com/html5">HTML5 version</a>.</li>
+  <li>You shouldn’t log into accounts that can identify you through Tor, and you
+should switch off geolocation if you’re using a device that supports it.</li>
+  <li>
+    <p>Don’t disactivate default plugins and don’t install other plugins in Tor Browser or
+in Orfox/Orweb - use the default settings</p>
+  </li>
+  <li><a href="https://www.torproject.org/docs/faq.html.en">Tor FAQ</a> - In particular: - <a href="https://www.torproject.org/docs/faq.html.en#WhySlow">Why
+is Tor so slow?</a></li>
+  <li><a href="https://www.torproject.org/docs/faq.html.en#IsItWorking">How can I tell that Tor is working, and that my connections are really
+anonymized?</a></li>
+  <li><a href="https://www.torproject.org/docs/faq.html.en#NoDataScrubbing">Does Tor remove personal information from the data my application sends?</a></li>
+  <li>
+    <p><a href="https://www.torproject.org/docs/faq.html.en#TBBFlash">Why can’t I view videos on some Flash-based sites?</a></p>
+  </li>
+  <li><a href="https://trac.torproject.org/projects/tor/wiki/doc/">Understanding and Using Tor - An Introduction for the Lay(wo)man</a></li>
+</ul>
+
+<hr />
+
+<h4 id="tails">Tails</h4>
+
+<p><strong>Tails</strong> is a live operating system that you can boot on almost any computer
+from a DVD, USB stick, or SD card.</p>
+
+<p>It aims at preserving your privacy and anonymity, and helps you to:</p>
+
+<ul>
+  <li>Use the Internet anonymously</li>
+  <li>Circumvent censorship</li>
+  <li>Leave no trace on the computer you are using unless you ask explicitly</li>
+  <li>Use state-of-the-art cryptographic tools to encrypt your files, emails and
+instant messaging</li>
+</ul>
+
+<ol>
+  <li><a href="https://tails.boum.org/">Website</a></li>
+  <li><a href="https://tails.boum.org/install/index.en.html">Interactive Guide</a></li>
+</ol>
+
+<h5 id="warnings">Warnings</h5>
+
+<ul>
+  <li>If you use Tails, all traffic is routed through Tor and default applications
+have been enhanced to protect your anonymity
+    <ul>
+      <li><a href="https://tails.boum.org/doc/about/warning/index.en.html">Warnings for Tails</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="whonix">Whonix</h4>
+
+<p><strong>Whonix</strong> is a complete operating system designed to be used in a virtual
+machine.</p>
+
+<p>Designed for advanced security and privacy, Whonix mitigates the threat of
+common attack vectors while maintaining usability. Its fail-safe, automatic,
+and desktop-wide use of the Tor network allows for censorship circumvention and
+anonymity. A heavily reconfigured Debian base is run inside multiple virtual 
+machines, providing a substantial layer of protection from malware and IP 
+address leaks. Commonly used applications are pre-installed and safely
+pre-configured for immediate use.</p>
+
+<ul>
+  <li><a href="https://www.whonix.org/">Website</a></li>
+</ul>
+
+<h5 id="warnings-1">Warnings</h5>
+
+<ul>
+  <li>If you use Whonix, all traffic is routed through Tor and default 
+applications have been enhanced to protect your anonymity.
+    <ul>
+      <li><a href="https://www.whonix.org/wiki/Warning">Warnings for Whonix</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="tor-browser">Tor Browser</h4>
+
+<p><strong>Tor Browser</strong> is software that protects you by bouncing your communications
+around a distributed network of relays run by volunteers all around the world.
+In certain locations, where connections are slow, it might be difficult to
+establish the circuit through the Tor network.</p>
+
+<ol>
+  <li>The Tor Browser lets you use Tor on Windows, Mac OS X, or Linux without
+needing to install any additional software. It can run off of a USB flash drive</li>
+  <li><a href="https://www.torproject.org">Official website</a></li>
+  <li>Security in a Box has an updated guide on Tor Browser:
+    <ul>
+      <li><a href="https://securityinabox.org/en/guide/torbrowser/windows/">Windows</a></li>
+      <li><a href="https://securityinabox.org/en/guide/torbrowser/linux/">Linux</a></li>
+      <li><a href="https://securityinabox.org/en/guide/torbrowser/mac/">Mac</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h5 id="warnings-2">Warnings</h5>
+
+<p>Please keep in mind that if you’re using Tor Browser, only your activity within
+the Tor Browser is encrypted and anonymised - any other internet traffic is not.
+Other applications, like Skype or the regular browsers, will not be routed
+through the Tor network, even if the Tor Browser is running.</p>
+
+<h4 id="orbot">Orbot</h4>
+
+<p><strong>Orbot</strong> is an anonymity tool for Android devices. It is needed to launch Tor in Android phones and tablets, before you use Orfox (see below).</p>
+
+<ul>
+  <li><a href="https://guardianproject.info/apps/orbot/">Website</a></li>
+  <li>Security in a box <a href="https://securityinabox.org/en/guide/orbot/android/">guide on Orbot</a></li>
+</ul>
+
+<h5 id="warnings-3">Warnings</h5>
+
+<ul>
+  <li>If you use Orbot, by default only applications aware of Orbot such as Orfox
+will be anonymised.</li>
+  <li>You can also run Orbot in “VPN Mode” which will route all phone traffic 
+through Tor. Be aware that there is a lot of identifying information that
+applications (and your phone) transmit, so this is not a sufficient way to 
+achieve anonymity on the phone. To enable the “VPN Mode”, open the side panel
+and click on the button next to “Apps VPN Mode”.</li>
+</ul>
+
+<p><em>If needed we can mention that you can also torify your connections for some
+selected apps that are not anonymised by default [Settings –&gt; Select Apps in
+v.15.2], but this requires root privileges on your device, so it’s more
+difficult and shouldn’t be recommended to non experts.</em></p>
+
+<h4 id="orfox">Orfox</h4>
+
+<p>A browser for Android devices that can be used to browse the Internet anonymously
+together with Orbot (see above).</p>
+
+<ul>
+  <li><a href="https://guardianproject.info/apps/orfox/">Website</a></li>
+</ul>
+
+<p>Orfox is built from the same source code as Tor Browser (which is built upon
+Firefox), but with a few minor modifications to the privacy enhancing features
+to make them compatible with Firefox for Android and the Android operating
+system.</p>
+
+<h5 id="warnings-4">Warnings</h5>
+
+<ul>
+  <li>Use of Orfox is at your own risk; remember that sensitive data does not always
+belong on a mobile device. See warnings for Orbot above.</li>
+</ul>
+
+<h4 id="onion-browser">Onion Browser</h4>
+
+<p><strong>Onion Browser</strong> is a free web browser for iPhone and iPad that encrypts and
+tunnels web traffic through the Tor network, with extra features to help you
+browse the internet privately.</p>
+
+<p>Available only for iOS.</p>
+
+<ul>
+  <li>Websites:
+<a href="https://blog.torproject.org/blog/tor-heart-onion-browser-and-more-ios-tor">1</a> -
+<a href="https://itunes.apple.com/us/app/onion-browser-secure-anonymous-web-with-tor/id519296448?mt=8">2</a></li>
+</ul>
+
+<h5 id="warnings-5">Warnings:</h5>
+
+<ul>
+  <li>Only connections through the Onion Browser are anonymised. Other applications
+will not be routed through the Tor network, even if the Onion Browser is
+running.</li>
+  <li>Multimedia content often bypasses Tor and compromises your privacy; video files and
+video streams are blocked by default and are not supported by the Onion Browser.</li>
+  <li>Use of the Onion Browser is at your own risk; remember that sensitive
+data does not always belong on a mobile device.</li>
+</ul>
+
+<h3 id="circumvention">Circumvention</h3>
+
+<h4 id="freebrowser">FreeBrowser</h4>
+
+<p><strong>FreeBrowser</strong> FreeBrowser is a free Android app that provides access to an
+uncensored internet. Currently targeting Chinese users.</p>
+
+<ul>
+  <li><a href="https://freebrowser.org/en/">Website</a></li>
+</ul>
+
+<h4 id="freenet">Freenet</h4>
+
+<p>Freenet is a peer-to-peer platform for censorship-resistant communication and
+publishing. You can browse websites, post on forums, and publish files within Freenet
+with strong privacy protections.</p>
+
+<ul>
+  <li><a href="https://freenetproject.org/">Website</a></li>
+</ul>
+
+<h4 id="vpns">VPNs</h4>
+
+<p>A <strong>VPN</strong> encrypts and sends all Internet data between your computer and another
+computer. A VPN protects your traffic from being intercepted locally, but your
+VPN provider can keep logs of your traffic (websites you access, and when you
+access them). These logs could trace back to you, and if your adversary is
+powerful enough, they could pressure VPN providers to disclose this information.</p>
+
+<p>It is very important to trust the VPN provider you use. We have contacts with some providers who can offer free accounts to civil society members. Some options are listed below:</p>
+
+<h5 id="mullvad">Mullvad</h5>
+
+<p><strong>Mullvad</strong> is a VPN which incorporates some obfuscation tech.</p>
+
+<ul>
+  <li><a href="https://www.mullvad.net/">Website</a></li>
+</ul>
+
+<h5 id="autistici-vpn">Autistici VPN</h5>
+
+<p>This VPN service is recommended for high-risk activists but one needs to request
+an account.
+The VPN configuration file can be downloaded with the autistici.org email credentials. The configuration can be used for one week, after which a new file must be downloaded.</p>
+
+<p>It is based on OpenVPN and can be used on Linux, Windows, Mac, Android and iOS.</p>
+
+<ul>
+  <li><a href="https://vpn.autistici.org/">This is the official website</a></li>
+  <li><a href="https://vpn.autistici.org/help/index-en.html">Guide and resources</a></li>
+</ul>
+
+<p><em>Note that Autistici’s VPN is connected to the email account: if a mailbox is
+never accessed for 6 months, it will be deactivated. The email account can be
+then re-activated, but the user needs to contact Autistici’s helpdesk to do so.
+If the client is not interested in using Autistici’s mail service, they should
+rather use Bitmask.</em></p>
+
+<h6 id="warnings-6">Warnings</h6>
+
+<ul>
+  <li><a href="https://vpn.autistici.org/help/index-en.html#limitations-ai-vpn">Limitations to using Autistici’s VPN</a></li>
+</ul>
+
+<h5 id="riseup-vpn-red">Riseup VPN Red</h5>
+
+<p>Riseup offers an OpenVPN-based VPN service (VPN Red) recommended for high-risk activists.
+To use Riseup VPN Red, one needs to <a href="https://account.riseup.net/user/new">request an account on Riseup</a>.</p>
+
+<p>Riseup’s VPN Red is based on OpenVPN and can be used on Linux, Windows, Mac,
+Android and iOS.</p>
+
+<ul>
+  <li><a href="https://riseup.net/en/vpn/vpn-red">Website</a></li>
+</ul>
+
+<h6 id="warnings-7">Warnings</h6>
+
+<ul>
+  <li><a href="https://riseup.net/en/vpn#limitations-to-using-the-riseup-vpn">Limitations of Riseup’s VPN</a></li>
+  <li><a href="https://riseup.net/en/vpn/security-issues">Some security issues when using a VPN</a></li>
+</ul>
+
+<p><em>This VPN is a bit more complicated to configure than Autistici’s, but if the
+client already has an account with Riseup, it will be probably faster to use
+this.</em></p>
+
+<h5 id="bitmask">Bitmask</h5>
+
+<p><strong>Bitmask</strong> is A VPN client that uses Riseup Black, Calyx, and other VPN servers. Depending on
+their technical capacities, users could install this option on their own
+server.</p>
+
+<ul>
+  <li>Available only for Android, Linux, and macOS users. A Windows version is
+expected to be released soon.</li>
+  <li><strong>Article #192</strong>: <a href="Riseup-Bitmask-VPN.md">Set a client with Riseup’s VPN using Bitmask</a> is dedicated to this tool and contains guides.</li>
+  <li><a href="https://www.bitmask.net">Website</a></li>
+</ul>
+
+<h6 id="warnings-8">Warnings</h6>
+
+<ul>
+  <li>Bitmask is experimental software: <strong>It should not be used for situations where a compromise of the user’s data could put them in danger</strong>.</li>
+  <li><a href="https://leap.se/en/limitations">Limitations of Bitmask</a></li>
+  <li><a href="https://riseup.net/en/vpn/security-issues">Some security issues when using a VPN</a></li>
+</ul>
+
+<h5 id="uproxy">uProxy</h5>
+
+<p><strong>uProxy</strong> is a easy to use and easy to deploy VPN, users can install it on their own private servers, use providers like Digital Ocean, or use the Access Now instance.</p>
+
+<p>Our instance of uProxy is hosted on in Amsterdam by Digital Ocean. In order to grant access to a new user follow these steps:</p>
+
+<ol>
+  <li>Use the uProxy server management app:
+<a href="https://drive.google.com/file/d/1-T52IDLFm2mHWHPDCPCbVbF385AiqQYg/view?usp=sharing">Linux 32Bit</a>
+<a href="https://drive.google.com/file/d/1Xu7S6pz9XSP_XQJIwl-fx9e5F1BN5TRv/view?usp=sharing">Linux 64Bit</a>
+<a href="https://drive.google.com/file/d/1ZuWuof_W_DOD8Ui8jDb51eagJw2lPdM1/view?usp=sharing">Mac</a>
+<a href="https://drive.google.com/file/d/1QryWp6j9HpNvpHyILdD1Ba9c6ZZmJzVQ/view?usp=sharing">Windows</a></li>
+  <li>Login with the servers@ account (password in Keepass)</li>
+  <li>To add a new user click on ADD KEY</li>
+  <li>Click “SHARE” within the newly created key.</li>
+  <li>You will get an invite link, send this link to client.</li>
+</ol>
+
+<p>Invitation link will include instructions to download the client app</p>
+
+<ul>
+  <li>Websites: <a href="https://jigsaw.google.com/projects/#uproxy">1</a> - <a href="https://www.uproxy.org/">2</a></li>
+</ul>
+
+<h4 id="circumvention-tools-based-on-encrypted-proxies">Circumvention Tools Based on Encrypted Proxies</h4>
+
+<p>These are proxy tools that utilize encryption. Although the connection is
+encrypted, it might be traced back to you: these tools do not
+provide anonymity. They are, however, more secure than a plain web-based proxy.
+Examples of these tools include Lantern and Psiphon.</p>
+
+<h5 id="psiphon">Psiphon</h5>
+
+<p><strong>Psiphon</strong> is a circumvention system that uses a combination of
+secure communication and obfuscation technologies.</p>
+
+<ol>
+  <li>Available for: Android 2.2 and up, iOS 8 and up, Windows XP, Windows Vista, Windows 7, Windows 8 (desktop), and Windows 10.</li>
+  <li><a href="http://www.psiphon3.com">Website</a></li>
+  <li><a href="http://www.psiphon3.net/en/user-guide.html">User guide</a></li>
+</ol>
+
+<h5 id="lantern">Lantern</h5>
+
+<p><strong>Lantern</strong> is an Internet proxy tool. Its goal is to provide access to the open
+internet. Lantern is unique because it uses peer connections as a source of
+internet connectivity when servers are unavailable.</p>
+
+<ol>
+  <li>Available for Mac, Windows, Android, and Linux Debian-based distributions.</li>
+  <li><a href="https://getlantern.org/">Website</a></li>
+</ol>
+
+<h4 id="web-based-proxies">Web-based Proxies</h4>
+
+<p>This is a good way of circumventing censorship. Basically you route your HTTP
+requests through a different computer (the proxy). The user must be careful,
+since there are malicious proxy servers, capable of rerouting and modifying
+users’ requests for malicious purposes.</p>
+
+<p>Never use or trust a proxy server no one has ever heard of. And even if you
+receive the proxy from a trusted partner, play it safe and do not pass on any
+private information that isn’t encrypted.</p>
+
+<ul>
+  <li><a href="http://proxy.org/">A guide to use a web-based proxy</a></li>
+</ul>
+
+<h3 id="comments">Comments</h3>
+
+<ul>
+  <li>
+    <p><a href="https://ssd.eff.org/en/module/how-circumvent-online-censorship">Helpful article suggestion</a></p>
+  </li>
+  <li>
+    <p>Security in a box: <a href="https://securityinabox.org/en/guide/anonymity-and-circumvention/">Remain anonymous and bypass censorship on the Internet</a></p>
+  </li>
+  <li>
+    <p><a href="https://thatoneprivacysite.net/vpn-comparison-chart/">Helpful comparison website for VPN</a></p>
+  </li>
+</ul>

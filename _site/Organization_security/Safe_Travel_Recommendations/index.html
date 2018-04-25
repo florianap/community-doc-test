@@ -1,0 +1,408 @@
+<h1 id="safe-travel-recommendations">Safe Travel Recommendations</h1>
+<h2 id="basic-recommendations-for-clients-who-are-planning-to-travel-and-want-their-devices-to-be-safe">Basic recommendations for clients who are planning to travel and want their devices to be safe</h2>
+
+<h3 id="problem">Problem</h3>
+
+<p>The client is seeking advice about how to keep their computer, phone or
+information safe while travelling.</p>
+
+<h3 id="solution">Solution</h3>
+
+<h4 id="initial-evaluation">Initial evaluation</h4>
+
+<p>We need to evaluate the situation in the country the client is travelling to, as
+well as the client’s needs, by asking the client the following questions:</p>
+
+<ol>
+  <li>Which country or countries will you visit during their travels?</li>
+  <li>Do you need to travel with your devices?</li>
+  <li>Do you need to access sensitive data while travelling?</li>
+  <li>Do you need to encrypt your communications?</li>
+  <li>Do you need to access your email and/or social media accounts?</li>
+</ol>
+
+<p>Once we know which country or countries the client will visit, we need to answer
+these questions by examining the context:</p>
+
+<ul>
+  <li>Is the country censoring the internet?</li>
+  <li>Does the country have a high Internet penetration rate with high speed Internet connections available?</li>
+  <li>Are there any laws against the import or usage of encryption?</li>
+  <li>What do the border controls imply?
+    <ul>
+      <li>Can the authorities force someone to unlock their devices or storage
+media?</li>
+      <li>Can the authorities request passwords of email and social media accounts?</li>
+      <li>Could the authorities seize the client’s devices?</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="recommendations">Recommendations</h4>
+
+<ol>
+  <li>
+    <p>If the country is censoring the internet, we should recommend the usage of
+circumvention tools - see <a href="#Circumvention">“Censorship Circumvention”</a> below.</p>
+
+    <p>If the country is not censoring the internet, we should still recommend the
+ usage of a VPN for encrypting connections when the network is not secure -
+ see <a href="#Insecure_networks">“Insecure networks”</a> below.</p>
+  </li>
+  <li>
+    <p>If the import or usage of encryption is banned, the client should make sure
+that no encryption software or encrypted files are present in their devices when
+crossing the border. If they need to encrypt or decrypt data or communications,
+they should download the software and/or the encrypted files from a cloud
+through a trusted connection (see <a href="#data-minimization">“Data minimization and
+backup”</a> below).</p>
+
+    <ul>
+      <li><a href="https://www.gp-digital.org/national-encryption-laws-and-policies/">World map of encryption laws and
+policies</a></li>
+      <li><a href="http://cryptolaw.org/">Detailed crypto import/use/export information by
+country</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>If the the authorities can force visitors to unlock their devices or storage
+media at the border, the client should leave their devices at home or travel
+with a barebone computer, or else minimize their data (see <a href="#data-minimization">“Data minimization
+and backup”</a> below).</p>
+
+    <p>If the authorities can request passwords of email and social media accounts,
+ the client should consider creating alternative accounts (see <a href="#Alternative_accounts">“Alternative
+ accounts”</a> below).</p>
+
+    <p>If the authorities could seize the client’s device, they should consider
+ travelling without a device, as a device that is not constantly under their
+ control might be compromised (see <a href="#Leaving_devices_at_home">“Leaving devices at
+ home”</a> below).</p>
+  </li>
+  <li>
+    <p>If the client needs to travel with their own devices, they should back up all
+their data and leave them at home (see <a href="#data-minimization">“Data minimization and
+backup”</a> below). They should however think twice if there is
+a high risk that their device is seized.</p>
+
+    <p>If the device they need to take with them is a mobile phone, they might
+ consider leaving their SIM card at home and buying a new one once they’re
+ inside the country.</p>
+
+    <p>If the client does not need their own devices, they can consider travelling
+ with an alternative laptop and/or a burner phone (see <a href="#Leaving_devices_at_home">“Leaving devices at
+ home”</a> below).  If the software they need is not
+ illegal in the country, they can install the software they will need, but
+ it’s a good idea to travel with as few data as possible.</p>
+  </li>
+  <li>
+    <p>If the client keeps data on their devices while travelling, they should
+use full-disk encryption (see <a href="#FDE">“Full-Disk encryption”</a> below).</p>
+
+    <ul>
+      <li>If encryption is illegal and/or the authorities can force the client to
+unlock their devices at the border, it is better to store their data in an
+encrypted folder in a trusted server or cloud service and download them
+through a secure connection once they’re inside the country (see <a href="#Leaving_devices_at_home">“Leaving
+devices at home”</a> below).</li>
+      <li>If encryption is not banned, but the authorities can force the client to
+unlock the devices, they can store the data in a hidden volume with
+Veracrypt (see <a href="#Leaving_devices_at_home">“Leaving devices at home”</a>
+below).</li>
+    </ul>
+  </li>
+  <li>
+    <p>If the client needs to encrypt their communications, we should give them the
+following advice:</p>
+
+    <ul>
+      <li><strong>email</strong> - if encryption is not illegal in the destination country, they
+should store their PGP keys in an encrypted USB stick that they keep
+always with them. If encryption is illegal, they can store the keys in an
+encrypted folder in a trusted server or cloud service (see <a href="#Leaving_devices_at_home">“Leaving
+devices at home”</a> below).</li>
+      <li><strong>mobile phones</strong> - see <a href="#secure-comms-mobile">“Secure communications on mobile
+devices”</a> below.</li>
+      <li>If encryption is illegal in the destination country, any encryption
+software should be downloaded through a trusted VPN or through Tor when
+the client is inside the country.</li>
+    </ul>
+  </li>
+  <li>
+    <p>If the client needs to access their email/social media accounts, they should
+activate <a href="#MFA">multi-factor authentication</a> and use <a href="#passwords">strong and unique
+passwords</a>, which they should store in an encrypted KeePassX
+database.</p>
+
+    <p>If encryption is banned in the destination country, the encrypted KeePassX
+ database can be stored in a trusted server or cloud service and downloaded
+ after the border control.</p>
+
+    <p>When connecting to their accounts, the client should always check that they
+ are connecting to the website through TLS/SSL and use a VPN if they’re
+ connecting to the web through an untrusted network (see <a href="#Insecure_networks">“Insecure
+ networks”</a> below).</p>
+
+    <p>If the client doesn’t need to access their email/social media accounts, they
+ can create an alternative account for communications (see <a href="#Alternative_accounts">“Alternative
+ accounts”</a> below).</p>
+  </li>
+</ol>
+
+<h4 id="basic-security-practices">Basic security practices</h4>
+
+<p>Some of the following recommendations are general security practices, but they
+should be implemented with special care when planning a journey.</p>
+
+<ul>
+  <li>
+    <p>Check that the client’s <strong>system is updated</strong> (operating system, programs,
+anti-virus).</p>
+  </li>
+  <li>
+    <p>Check that an <strong>antivirus</strong> is installed in the client’s system, otherwise
+provide them with instructions for installing it (see article #128 <a href="../Vulnerabilities_and_Malware/FAQ-Antivirus_for_Mac.md">“FAQ -
+Antivirus for Mac”</a>).</p>
+
+    <ul>
+      <li><a href="https://securityinabox.org/en/guide/avast/windows">Avast</a></li>
+      <li><a href="https://www.avg.com/us-en/free-antivirus-download">AVG</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Warn the client against opening <strong>non requested attachments</strong> or <strong>strange
+emails</strong>.</p>
+  </li>
+</ul>
+
+<p><a name="MFA"></a></p>
+<ul>
+  <li>
+    <p>Recommend to set up <strong>multi-factor authentication</strong>.</p>
+
+    <ul>
+      <li>EFF’s Security Self-defence guide on <a href="https://ssd.eff.org/en/module/how-enable-two-factor-authentication">setting up multi-factor
+authentication</a></li>
+      <li><strong>Google</strong>: Please refer to article #90 <a href="../Authentication_Security/Google_2FA.md">Two Steps verification for Gmail
+account</a>.</li>
+      <li><strong>Outlook</strong> and <strong>Microsoft</strong> <a href="http://windows.microsoft.com/en-us/windows/two-step-verification-faq">FAQ on
+2FA</a></li>
+      <li><strong>Yahoo</strong>: Please refer to Article #168 <a href="../Authentication_Security/Yahoo_2FA.md">Secure Yahoo account with 2 step
+verification</a>. Also see the
+<a href="https://help.yahoo.com/kb/SLN5013.html">guide by Yahoo</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Warn the client against <strong>shoulder surfers</strong> or <strong>cameras</strong> that could record
+their passwords while they’re entering it.</p>
+  </li>
+  <li>Recommend the client to always <strong>keep their devices with them</strong> and to switch
+them off whenever they have to leave them unattended. They should also enable
+the <strong>automatic screenlock</strong> feature on all devices.
+<a name="passwords"></a></li>
+  <li>
+    <p>If the client does not use <strong>strong and unique passwords</strong>, it is important
+that they do so before their travels.</p>
+
+    <ul>
+      <li><a href="https://ssd.eff.org/en/module/creating-strong-passwords">EFF’s guide on strong
+passwords</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><a name="data-minimization"></a></p>
+<h4 id="data-minimization-and-backup">Data minimization and backup</h4>
+
+<p>The client needs to understand that it is better to minimize the data they will
+be carrying with them. If possible, they should travel with a barebone computer,
+otherwise they should back up sensitive data and/or data that are potentially
+illegal in the destination country to an encrypted device and leave them at
+home.</p>
+
+<ul>
+  <li>Please refer to article #182: <a href="../File_Storage_Security/Secure_Backup.md">FAQ Secure
+Backup</a></li>
+</ul>
+
+<p>Potentially illegal data might include authorized copies of copyrighted material
+(such as music and video), pornography, and even innocent photographs of
+unclothed minors.</p>
+
+<p>If they need data while travelling to a country where these data might be
+illegal, they can store either just their data (encrypted) or an entire image of
+their system complete with software in a trusted server or cloud service
+provider and travel with a barebone laptop. Once arrived at their destination,
+they can download the data and/or software, and re-upload them before departure.
+This setup provides both data minimization and an accessible backup, but it
+limits work while in transit.</p>
+
+<p><a name="Leaving_devices_at_home"></a></p>
+<h4 id="leaving-devices-at-home">Leaving devices at home</h4>
+
+<p>If the client does not need to take their devices with them, we should recommend
+they leave them at home in a safe or in a trusted environment.</p>
+
+<p>While they’re travelling, they can take with them a travel laptop and/or a
+burner phone. These devices should be <a href="#FDE">encrypted</a> and equipped with VPN
+access, and should possibly contain no information. If the client needs access
+to specific files, we can set up a server where they can store encrypted files
+and then download them to their computer once they are inside the country.</p>
+
+<ul>
+  <li>If the client is going to travel with a ChromeBook, <a href="https://medium.com/@seamustuohy/administering-chromebooks-e4e924907352">this is a good resource
+for its preparation</a>.</li>
+</ul>
+
+<p>Another safer way of carrying data, if it’s unlikely that the authorities will
+request to unlock all devices and media at the border control, and if encryption
+is not illegal in the destination country, would be to store the data encrypted
+in a hidden <a href="https://veracrypt.codeplex.com/">VeraCrypt</a> volume in a USB stick,
+or else in a Tails <a href="https://tails.boum.org/doc/first_steps/persistence/index.en.html">encrypted persistent
+volume</a> live
+USB.</p>
+
+<p>If it is advisable to travel with no devices, the client will have to rely on
+shared computers.</p>
+
+<p>When using shared computers, the client should avoid exchanging sensitive
+communications or log into personal accounts, and if they need to do so, they
+should always remember to log out of their accounts at the end of the session
+(also see <a href="#Alternative_accounts">“Alternative accounts”</a> below).</p>
+
+<p>We should warn the client that a keylogger or other spyware may have been
+installed in the shared devices they will be using. The best solutions to this
+is a custom live USB that has been prepared with their choice of operating
+system and the basic software they need. This lets them boot their own trusted
+operating system from the USB and bypass the untrusted computer’s standard setup
+entirely. A good solution, can be a <a href="https://tails.boum.org/">Tails</a> USB stick.</p>
+
+<p><a name="FDE"></a></p>
+<h4 id="full-disk-encryption">Full-disk encryption</h4>
+
+<p><strong>Important: If the destination country bans the import or usage encryption, we
+should warn the client not to cross the border with encryption software or
+encrypted data.</strong></p>
+
+<p>Recommend to enable full-disk encryption on all the devices the client will be
+carrying during their travels.</p>
+
+<ul>
+  <li>Please refer to article #166: <a href="../File_Storage_Security/FAQ-Full_disk_encryption.md">FAQ - Full disk
+encryption</a></li>
+</ul>
+
+<p><a name="Insecure_networks"></a></p>
+<h4 id="insecure-networks">Insecure networks</h4>
+
+<p>It is very important that when connecting to insecure networks, for example in
+hotels, airports or cafes, a VPN service is used. A compilation of VPN providers
+that claim to respect users’ privacy can be found
+<a href="https://torrentfreak.com/vpn-services-anonymous-review-2017-170304/">here</a>. The
+most important aspect is making sure that the provider can be trusted.</p>
+
+<p><a name="Circumvention"></a></p>
+<h4 id="censorship-circumvention">Censorship circumvention</h4>
+
+<ul>
+  <li>
+    <p>Please refer to Article #175: <a href="../Secure_Communications/Circumvention_Anonymity_tools_list.md">FAQ - Circumvention &amp; Anonymity tools
+list</a>.</p>
+  </li>
+  <li>
+    <p>Using Tor:</p>
+    <ul>
+      <li><a href="https://securityinabox.org/en/guide/torbrowser/windows">General
+information</a></li>
+      <li><a href="https://ssd.eff.org/en/module/how-use-tor-windows">Tor on Windows</a></li>
+      <li><a href="https://ssd.eff.org/en/module/how-use-tor-mac-os-x">Tor on Mac</a></li>
+      <li><a href="https://ssd.eff.org/en/module/how-use-tor-linux">Tor on Linux</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Please note that for the case of China, Kazakhstan or other locations where Tor may be
+blocked, it is important to add bridges to the Tor setup (in the case of China,
+have the user select meek bridges).</p>
+
+<ul>
+  <li>Article on what to do when <a href="https://blog.torproject.org/blog/breaking-through-censorship-barriers-even-when-tor-blocked">Tor is blocked in a
+country</a></li>
+  <li><a href="https://bridges.torproject.org/">FAQ on Tor bridges</a></li>
+  <li><a href="https://www.torproject.org/docs/bridges#AddTorNotWorks">How to add bridges in the Tor
+Browser</a></li>
+  <li>See <a href="Digital_security_advice_when_traveling_to_China.md">article on travelling to
+China</a></li>
+</ul>
+
+<p><a name="Alternative_accounts"></a></p>
+<h4 id="alternative-accounts">Alternative accounts</h4>
+
+<p>If the client does not need to access their email and social media accounts,
+they can create new accounts just for the trip that they will “throw away”
+afterwards.</p>
+
+<p>They can use the temporary address for all non-sensitive communications while
+travelling, so that if the account is compromised it will give the attacker no
+value beyond the end of their trip.</p>
+
+<p>Alternative social media accounts could be useful in case the authorities can
+force visitors to disclose the passwords for their accounts at the border, but
+the client should be aware that a recently opened and/or inactive account might
+be less credible and that they should spend some time populating the alternative
+accounts with connections (possibly not their real network of friends and
+colleagues) and non-sensitive content.</p>
+
+<p>Recommend the client not to log into their regular accounts until or unless they
+can be confident that the connection and computer are safe.</p>
+
+<h4 id="mobile-devices">Mobile devices</h4>
+
+<p>Mobile phones should generally be considered as insecure, and it’s better to
+travel with a burner phone. If the client needs to take their work phone with
+them, they should back up all data in a different device and remove them from
+the phone and its memory card.</p>
+
+<ul>
+  <li><a href="https://securityinabox.org/en/guide/mobile-phones">Basic general recommendations for feature
+phones</a></li>
+  <li><a href="https://securityinabox.org/en/guide/smartphones/">Basic general recommendations for
+smartphones</a></li>
+  <li><a href="https://securityinabox.org/en/guide/basic-setup/android">Basic security settings for Android
+devices</a></li>
+</ul>
+
+<p><a name="secure-comms-mobile"></a></p>
+<h5 id="secure-communications-on-mobile-devices">Secure communications on mobile devices</h5>
+
+<p>Even if mobile devices are less secure than laptops, they can be useful to
+establish a secure communication channel while travelling, thanks to end-to-end
+encrypted messaging and voice apps like WhatsApp, Signal or Wire.</p>
+
+<ul>
+  <li>See article #204: <a href="../Secure_Communications/Encrypted_voice_communications_on_mobiles.md">Encrypted voice communications on
+mobiles</a></li>
+  <li><a href="https://securityinabox.org/en/guide/apg/android">Mail encryption on Android</a>
+(the client should be warned to use a subkey or to generate a different pair
+of keys for using GPG on a phone)</li>
+</ul>
+
+<h3 id="comments">Comments</h3>
+
+<p><strong>Make sure the links are working properly before sending to the client.</strong></p>
+
+<h4 id="resources">Resources</h4>
+
+<ul>
+  <li>A post on the Access Now blog with <a href="https://www.accessnow.org/blog/2015/03/17/best-practices-for-digital-security-while-traveling-to-rightscon">general guidelines on digital security
+while
+traveling</a></li>
+  <li>EFF published a <a href="https://ssd.eff.org/en/module/things-consider-when-crossing-us-border">travel guide focused on US border
+crossing</a></li>
+  <li><a href="https://www.eff.org/wp/digital-privacy-us-border-2017">Establish a technical and legal shield against the latest laptop ban
+concerning certain
+airlines</a></li>
+  <li><a href="https://informationsecurity.princeton.edu/intltravel">Princeton University International Travel guide</a></li>
+  <li>The <a href="https://secfirst.org/index.html">Umbrella app</a> offers important tips on
+safer travels for people at risk</li>
+</ul>

@@ -1,0 +1,72 @@
+<h1 id="recommend-cmsframework-for-ngos">Recommend CMS/Framework for NGOs</h1>
+<h2 id="best-practices-for-building-creating-and-rebuilding-a-secure-website">Best practices for building, creating, and rebuilding a secure website</h2>
+<h3 id="problem">Problem</h3>
+
+<ul>
+  <li>The client is uncertain about the best web technology to use to build their website.</li>
+  <li>The owner of the website finds it difficult to maintain it for several reasons: lack of technical skills, budget limitations, a wish to rebuild it.</li>
+  <li>The website contains submission forms, donation forms, or other forms that permit storing or compromising visitors’ data information.</li>
+  <li>In certain cases, if the website is compromised, the whole IT architecture of the organization may be compromised.</li>
+</ul>
+
+<h3 id="solution">Solution</h3>
+
+<p>The choice of what to recommend for a web building technology that ensures greater security depends on many factors. Incident handlers should try to assess the needs of the organization. So, even if the client is asking specifically for a Framework or CMS recommendation, we should try to propose changes and improvements wherever the organization needs them.</p>
+
+<p>The following questions might help us have a better understanding of the client’s needs:</p>
+
+<ul>
+  <li>Is it a static or dynamic website?</li>
+  <li>What are the contents and features of the website? What is the intention of the website?</li>
+  <li>Does the client have a technical person available with the necessary expertise? Will this person maintain the website or not?</li>
+  <li>If the client wants to rebuild their website, what is the current architecture? CMS, development language, DB server (SQL database, flat-file DB type) technology, server type (LAMP, IIS), one-person publisher, etc.? Remote installation, or on local machine only?</li>
+</ul>
+
+<p>We need to take into consideration all security concerns when providing the client with recommendations. Providing more than one proposition to the client (top 3), with pros and cons, allows the client to decide the solution that best fits their need.</p>
+
+<p>We should only recommend FOSS solutions, and we shouldn’t recommend online site makers because the hoster owns the source code of the website.</p>
+
+<p>We need to explain to the client that a CMS needs a webmaster to handle upgrades and other security issues, and they cannot install a CMS and just leave it as it is forever.</p>
+
+<p>Also, every web technology has its vulnerabilities and flaws, especially if it’s not well implemented and maintained (system up to date, security patches, etc.).</p>
+
+<p>The security of the website doesn’t only depend on the best chosen CMS/Framework - every environment or technology should be installed, configured and secured appropriately; the same applies to the web server, DB server, host server, production environment, source code of the website, plugins, HTTPS configuration, DDOS protection, etc.</p>
+
+<h4 id="cms-or-framework---what-is-the-best">CMS or Framework - what is the best?</h4>
+
+<p>Generally, clients ask for a tool to develop an organization’s official website or a small simple website with mostly text content. In these scenarios, we would usually propose a CMS.</p>
+
+<p>Sometimes, the client could have a technical person with some framework skills; all frameworks have the same design, so we could propose a Framework instead of a CMS.</p>
+
+<h4 id="cmss-drupal-joumla-or-wordpress">CMSs: Drupal, Joumla, or Wordpress?</h4>
+
+<ul>
+  <li><strong>Wordpress</strong> could be the best choice for a simple blog or brochure-type site (while very friendly for non-developers, it’s a flexible platform also capable of very complex sites).</li>
+  <li><strong>Drupal</strong> is best suited for a complex, highly customized site requiring scalability and complex content organization. Operating it requires a certain degree expertise and experience.</li>
+  <li><strong>Joomla</strong> can be recommended as something in between that has an easier learning curve.</li>
+</ul>
+
+<h4 id="static-website-technologies">Static website technologies</h4>
+
+<p>It may be good to investigate and add one or more static website options, given their security benefits:</p>
+
+<ul>
+  <li><a href="https://getnikola.com/"><strong>Nikola</strong></a></li>
+  <li><a href="http://jekyllrb.com"><strong>Jekyll</strong></a></li>
+  <li><a href="https://github.com/octopress/octopress"><strong>Octopress</strong> (built on top of Jekyll)</a></li>
+  <li><a href="http://blog.getpelican.com/"><strong>Pelican</strong></a> - Pelican is a static site generator, written in Python, that requires no database or server-side logic.</li>
+  <li><a href="http://mkframework.com/"><strong>MkFramework</strong></a> - For mini forums building, a very interesting Framework project (website in French)</li>
+  <li><a href="https://gohugo.io/"><strong>Hugo</strong></a> - A fast and flexible static site generator built in Go.</li>
+  <li><a href="http://mezzanine.jupo.org/"><strong>Mezzanine</strong></a></li>
+</ul>
+
+<h3 id="comments">Comments</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/List_of_content_management_systems">List of content management systems</a></p>
+
+<p><a href="https://www.opensourcecms.com">This website</a> has demo versions of over 70 open source LAMP-based CMSs, including Drupal, Mambo, and Joomla, eZ publish, Lenya, and phpBB.</p>
+
+<p><a href="http://www.cmsmatrix.org/matrix/cms-matrix">This website</a> lets you make the comparison between two or more CMSs from a features/functionalities perspective.</p>
+
+<p><a href="https://www.owasp.org/index.php/Secure_Configuration_Guide">This is a good reference for a Secure Configuration Guide</a>.</p>
+

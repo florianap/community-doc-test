@@ -1,0 +1,67 @@
+<h1 id="converting-markdown-to-indesign-and-vice-versa">Converting Markdown to InDesign and vice-versa</h1>
+<h2 id="how-to-export-and-import-indesign-documents-into-markdown">How to export and import InDesign documents into Markdown</h2>
+
+<h3 id="problem">Problem</h3>
+
+<p>The client wants to switch to a git-based documentation workflow using Markdown, 
+but at the moment their documentation is based on InDesign and they will need to export Markdown to InDesign also in the future.</p>
+
+<hr />
+
+<h3 id="solution">Solution</h3>
+
+<p>The goal should be to use Markdown on git as the source of the documentation by default. This will make version control possible and facilitate collaboration.</p>
+
+<ol>
+  <li>
+    <p>To achieve this, the first step should be to export all the InDesign
+files to Markdown, going through HTML.</p>
+
+    <ul>
+      <li><a href="https://helpx.adobe.com/indesign/using/export-content-html-cs5-5.html">This page explains how to export InDesign to HTML</a></li>
+      <li>Once the HTML files have been generated, converting them to markdown requires
+Pandoc. Help the client install Pandoc following <a href="http://pandoc.org/installing.html">this guide</a>
+        <ul>
+          <li>There is also a <a href="http://pandoc.org/try/">web version of Pandoc</a></li>
+          <li>Some markdown editors like Atom export HTML into markdown</li>
+          <li>Assuming the HTML file that needs to be converted is named <code class="highlighter-rouge">file.html</code> and the Markdown file the client needs to generate should be called <code class="highlighter-rouge">file.md</code>, the command to convert HTML to markdown is this: <code class="highlighter-rouge">pandoc -o file.md file.html</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Once all the HTML files have been converted to markdown, the client can start
+updating their files directly in the git repository.</p>
+  </li>
+  <li>
+    <p>Markdown files can then be imported into InDesign going through HTML whenever the client feels they can consolidate one version into a PDF or print.</p>
+
+    <ul>
+      <li>
+        <p>To export Markdown into HTML Pandoc can be used again, but also editors like Atom or ReText export markdown into HTML.</p>
+      </li>
+      <li>
+        <p>This time the command in pandoc will be: <code class="highlighter-rouge">pandoc -o file.html file.md</code> ( assuming the Markdown file that needs to be converted is named <code class="highlighter-rouge">file.md</code> and the HTML file the client needs to generate should be called <code class="highlighter-rouge">file.html</code>).</p>
+      </li>
+      <li>
+        <p><a href="http://networkcultures.org/digitalpublishing/2014/05/15/import-html-into-indesign-via-xml/">A howto for importing HTML to InDesign</a></p>
+        <ul>
+          <li>Instead of the Python script included in this article to delete new lines in the HTML file (which doesn’t seem to work), we can send the client <a href="https://github.com/AccessNow/helpline_documentation_resources/blob/master/scripts/sed-clean-HTML.sh">this script in
+bash</a>. The script can be launched on a Linux machine (it should also work in a Mac terminal).</li>
+          <li>Instructions for the client:
+            <ol>
+              <li>Download the attached file to the folder where you have saved your HTML files. You can open the file with a text editor to check that all is ok. You can also find the script here: https://github.com/AccessNow/helpline_documentation_resources/blob/master/scripts/sed-clean-HTML.sh</li>
+              <li>allow the script to be executed, by running this command: chmod 777 sed-clean-HTML.sh</li>
+              <li>run this command on all your files: ./sed-clean-HTML.sh filename.html</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="comments">Comments</h3>
+

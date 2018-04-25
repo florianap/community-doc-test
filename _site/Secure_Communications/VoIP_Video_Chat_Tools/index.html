@@ -1,0 +1,93 @@
+<h1 id="recommendations-on-video-chat-tools">Recommendations on video chat tools</h1>
+<h2 id="secure-solutions-for-voicevideo-calls">Secure solutions for voice/video calls</h2>
+
+<h3 id="problem">Problem</h3>
+
+<p>Skype is not a good solution for human right defenders at risk.</p>
+
+<p>Depending on their threat model, we should also discourage at-risk users from using other commercial services like Google Hangouts.</p>
+
+<hr />
+
+<h3 id="solution">Solution</h3>
+
+<h4 id="11-video-calls">1:1 video calls</h4>
+
+<p>For end-to-end encrypted 1:1 voice and video calls, we can recommend:</p>
+
+<ul>
+  <li><strong>Wire</strong> - an open source desktop and mobile app for end-to-end encrypted messaging (both 1:1 and group) and calls (only 1:1) that doesn’t need a telephone number to sign up.
+    <ul>
+      <li><a href="https://wire.com">Wire website</a></li>
+    </ul>
+  </li>
+  <li><strong>Signal</strong> - an open source desktop and mobile app for end-to-end encrypted messaging (both 1:1 and group) and calls (only 1:1).
+    <ul>
+      <li><a href="https://signal.org/blog/signal-video-calls/">Signal announcement of video calls feature</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="multi-party-video-calls">Multi-party video calls</h4>
+
+<p>Currently there is no solution for end-to-end encrypted group calls.</p>
+
+<p>For a group call to be as secure as possible, TLS/HTTPS needs to be implemented.</p>
+
+<p>We should also warn our clients that, since group video calls are not end-to-end encrypted, their security depends on the entity that is hosting the service, so we should recommend primarily services that are hosted by trusted partners, or self-hosted.</p>
+
+<ul>
+  <li>
+    <p><strong>Jitsi Meet</strong> is a video conference browser-based option. It was developed by the same team of Jitsi, the desktop voice and messaging client. The main difference is you don’t need to install a client for your computer, since you will connect using your browser to a trusted partner Jitsi Meet server. You can try this solution simply by going to <a href="https://meet.jit.si">the Jitsi Meet official website</a>.</p>
+
+    <p>Since this service is not end-to-end encrypted, we should recommend an instance of Jitsi Meet hosted by a trusted partner. For example:</p>
+
+    <ul>
+      <li><a href="https://meet.mayfirst.org">meet.mayfirst.org</a></li>
+      <li><a href="https://meet.equalit.ie/">meet.equalit.ie</a></li>
+    </ul>
+
+    <p>If the client has tech capacities, they can also choose to self-host a Jitsi Meet instance. Instructions for installing Jitsi Meet in a server can be found <a href="https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md">here</a>.</p>
+  </li>
+  <li><strong>Wire</strong> - For video calls with fewer than 10 participants, we can recommend Wire. Group video calls on Wire <em>are not encrypted</em>, but the audio and video quality is pretty good and stable. Participants can connect through the mobile or desktop app.
+    <ul>
+      <li><a href="https://wire.com">Wire website</a></li>
+    </ul>
+  </li>
+  <li>Other server-trusting proprietary solutions for multi-party calls include <a href="https://appear.in/">appear.in</a>, <a href="https://talky.io/">talky.io</a>, <a href="https://www.gotomeeting.com">GoToMeeting</a>, <a href="https://zoom.us/">Zoom</a>, and <a href="https://hangouts.google.com">Google Hangouts</a>.</li>
+</ul>
+
+<h4 id="voice-calls">Voice calls</h4>
+
+<p>If video is not strictly necessary, and bandwidth is low, it is worth proposing multi-party audio calls, for example with <strong>Mumble</strong>, an open source, low-latency, high quality voice chat software that can be self-hosted in the client’s server.</p>
+
+<ul>
+  <li>To use Mumble, the participants in the conversation need to install a client:
+    <ul>
+      <li><a href="https://wiki.mumble.info/wiki/Main_Page">Mumble for Windows, Mac, and Linux</a></li>
+      <li>Plumble for Android: <a href="https://play.google.com/store/apps/details?id=com.morlunk.mumbleclient.free">Google Play</a> - <a href="https://f-droid.org/packages/com.morlunk.mumbleclient/">F-Droid</a></li>
+      <li><a href="https://itunes.apple.com/dk/app/mumblefy/id858752232?mt=8">Mumblefy for iOS</a></li>
+    </ul>
+  </li>
+  <li>Mumble servers managed by trusted parties:
+    <ul>
+      <li>kefir.red  (Mexico) - <a href="https://wiki.kefir.red/Mumble">Instructions in Spanish</a></li>
+      <li>mumble.contaminati.net (Italy)</li>
+      <li>fala.navemae.xyz (Brazil) - <a href="https://wiki.ativismo.org.br/index.php?title=Mumble">Instructions in Portuguese</a></li>
+      <li>mumble.riseup.net (USA)</li>
+      <li>mumble.codigosur.net (Costa Rica)</li>
+      <li><a href="https://www.systemli.org/en/service/mumble.html">talk.systemli.org</a> (Germany)</li>
+    </ul>
+  </li>
+  <li><a href="https://wiki.mumble.info/wiki/Installing_Mumble">Instructions for installing Mumble in a server</a></li>
+  <li>If the Mumble conversation needs to be password-protected, a private channel can be created. To create a private channel, right-click when you connect to Mumble and set the name and a password for the channel. When you leave the channel, the logs and conversation disappear.</li>
+</ul>
+
+<hr />
+
+<h3 id="comments">Comments</h3>
+
+<p><a href="https://greenhost.nl/">Greenhost’s</a> <a href="https://eclips.is">Eclips.is</a> platform has a
+pre-configured setup to launch a Meet Jitsi instance on their cloud.</p>
+
+<p><a href="https://rocket.chat/">rocket.chat</a> - an open source fully featured slack clone - has plugins for WebRTC videobridging and OTR-encrypted chat conversations. It can be self-hosted as a standalone, or within a sandstorm.io instance, and could be more useful for organizations looking to consolidate Slack-style communications with a voice option.</p>

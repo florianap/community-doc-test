@@ -1,0 +1,357 @@
+<h1 id="forensic-handling-of-data-on-a-pc">Forensic Handling of Data on a PC</h1>
+<h2 id="how-to-avoid-destroying-the-chain-of-custody-when-handling-forensic-evidence">How to avoid destroying the Chain of Custody when handling forensic evidence</h2>
+
+<h3 id="problem">Problem</h3>
+
+<p>Any alteration, or even an environment or situation that creates the possibility of alteration, could lead to rejection of the evidence in a court of law. This is why proof of the Chain of Custody is so important. This is the reason why all analysis and  tests should be executed following the proper forensic handling of data process.</p>
+
+<hr />
+
+<h3 id="solution">Solution</h3>
+
+<h4 id="chain-of-custody">Chain of Custody</h4>
+
+<p>Being able to maintain the Chain of Custody is very important for forensic evidence. What this means is that you need to record, and be able to prove, that authorized personnel were in control of the evidence at all times, and that no unauthorized person or device or mechanism could have altered the evidence while in our custody.</p>
+
+<h4 id="documentation-and-containment">Documentation and containment</h4>
+
+<p>To maintain the Chain of Custody, it is imperative to carefully document what happens to the evidence. This means:</p>
+
+<ul>
+  <li><strong>Clearly label the evidence.</strong> There must be no confusion about a piece of evidence. All evidence, whether hard drives, USB drives, DVDs, etc. should be clearly labeled with the following information:
+    <ul>
+      <li>What the evidence relates to</li>
+      <li>Who received the evidence</li>
+      <li>Location of where the evidence was received</li>
+      <li>Location of where the evidence was sourced from</li>
+      <li>The date and time the evidence came into our possession</li>
+      <li>Any other notes you think are relevant regarding this piece of evidence (the specifications of the computer a hard drive came from, etc.)</li>
+    </ul>
+  </li>
+  <li><strong>If you have to send evidence via courier, or the postal service</strong>:
+    <ul>
+      <li>Special containers should be used to seal the evidence in such a way that the container cannot be opened without it being apparent (e.g. seal with special tape that, if removed, cannot be replaced without showing that the container has been opened).</li>
+      <li>Ideally make a copy (image) of the evidence before sending the original through the post or courier service, and generate a hash of the image.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Store the evidence in an anti-static bag</strong>, or similar appropriate container that will protect the device from static electricity or other destructive forces.</p>
+  </li>
+  <li>
+    <p>Every time the evidence changes hands, <strong>the next person responsible for the evidence should “sign for it”</strong>, which means documentation should be produced where the recipient of the evidence confirms they have received the evidence into their custody with their signature.</p>
+  </li>
+  <li><strong>Deny unauthorized personnel from accessing the data</strong> - Every reasonable effort must be taken so as to prevent unauthorized access to the stored evidence. This means:
+    <ul>
+      <li>Storing the evidence in a locked safe</li>
+      <li>Controlling access to areas where the evidence is stored and analyzed</li>
+      <li>Not leaving unauthorized people alone with the evidence</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="forensic-analysis-of-the-data">Forensic Analysis of the Data</h4>
+
+<p>There are some procedures that must be followed to ensure the evidence is properly handled while the forensic analysis is taking place. These include:</p>
+
+<ul>
+  <li><strong>Keep a log of everything you do to analyze the data:</strong>
+    <ul>
+      <li>What you connected it to, and how</li>
+      <li>Each and every command you ran against the data image as you perform your investigation</li>
+      <li>This log must identify who is performing the analysis</li>
+      <li>Date and time stamps for each action performed</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Only work on copies of the data, not the source data.</strong></p>
+  </li>
+  <li>
+    <p><strong>Ideally make multiple copies</strong> from the initial copy, as you may need to work on fresh copies if your analysis accidentally modifies the copy you are working on.</p>
+  </li>
+  <li>
+    <p><strong>Immediately on receipt of the source data, make a cryptographic hash of that image, and store it in a safe place.</strong> This is your <em>only</em> guarantee that you have not tampered with the evidence you are working on!</p>
+  </li>
+  <li>
+    <p><strong>After making a copy of the data, immediately create a cryptographic hash of that image</strong>, and check it against your master hash to ensure they match.</p>
+  </li>
+  <li>
+    <p><strong>As you work on your investigation on a copy of the data, periodically check that data image with the cryptographic hash</strong>, to ensure you have not inadvertently modified the data by performing your investigation. If the hash does not match, then:</p>
+
+    <ul>
+      <li>Record the fact that the hash no longer matches in your activity log.</li>
+      <li>Look in your log at all the steps you have taken between when you last checked the hash and now. One or more of the steps you have taken has modified the data of the copy, so you need to work out which step caused this, and work out how to perform a copy in the investigative step without modifying the data.</li>
+      <li>Abandon the now modified copy of the data. This is tainted, so clearly mark it as such and return it to secure storage.</li>
+      <li>Use a fresh copy of the data, again checking the hash to ensure it is clean before proceeding with the investigation.</li>
+      <li>If necessary, make extra copies of the data from the original source image you created (making sure to never perform investigative steps on that source image).</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="how-to-byte-copy-data">How to Byte-Copy Data</h5>
+
+<p>By “target” we will refer to the hard drive or data image already acquired by the client and sent to the Helpline. When explaining the use of commands, the “target” will be also referred to as “source device”, while the place where the byte-copy data will be stored is referred to as “destination device”. The forensic image that will be acquired with this process will be used to execute tests without affecting the original evidence received.</p>
+
+<h6 id="files-and-device-block-labels-for-the-examples">Files and device block labels for the examples</h6>
+
+<p>For the command examples, these name conventions will be used:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">[IMAGENAME].dd</code> - The name of the image file to be created</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">[LOGFILENAME].txt</code> - log file name</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">/dev/sdX</code> - target drive or source (assuming we want to copy a hard drive or data image and sdX is the partition).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">/dev/sdY</code> - destination drive (assuming this is the media where the copy will be stored and sdY is the partition).</p>
+  </li>
+</ul>
+
+<h6 id="procedure">Procedure</h6>
+
+<ol>
+  <li>
+    <p>Prepare destination media to be used to save the forensic image</p>
+
+    <p>The forensic image that will be taken from the target should be saved in a proper labeled and formatted drive with available space greater that the size of the forensic image. Execute the actions described below before approaching the target.</p>
+
+    <ul>
+      <li>Select an equally sized or larger hard drive or storage device to store the image</li>
+      <li>Properly label the destination media</li>
+      <li>Prepare an additional USB stick to collect a file log</li>
+    </ul>
+  </li>
+  <li>
+    <p>Capture the forensic image</p>
+
+    <p>There are two ways to capture the forensic image:</p>
+
+    <ol>
+      <li>using a bootable Linux forensic distribution on a CD or USB stick or</li>
+      <li>by command line (terminal). If possible, use the forensic distribution, as this method does not mount devices by default.</li>
+    </ol>
+  </li>
+</ol>
+
+<h6 id="using-a-forensic-distribution">Using a forensic distribution</h6>
+
+<p>In case you are using the forensic distribution, for example <a href="http://www.deftlinux.net/">DEFT</a>, boot the image by following these steps:</p>
+
+<ul>
+  <li>While the PC/laptop is powered off, plug into it:
+    <ol>
+      <li>the USB stick or CD with the Deft image,</li>
+      <li>the USB stick to upload the log, and</li>
+      <li>the enclosure with the wiped drive where the copy will be saved.</li>
+    </ol>
+  </li>
+  <li>Boot the DEFT Linux from the USB/CD/DVD: power the PC/laptop on, wait for the DEFT boot loader to start, select the language and then the system will display a text-based session with a bash shell with root permissions.</li>
+</ul>
+
+<p><strong>NOTE:</strong> in order to get the DEFT boot loader started, the BIOS of the system being analyzed should be set to boot from CD-ROM/DVD-ROM/BD-ROM or from external storage devices (depending on the media containing DEFT). In any other circumstances, configure the BIOS, save and restart the system either with the DVD already inserted in your CD/DVD drive or with the USB stick already connected. We recommend changing the boot order of the devices directly in the BIOS to prevent an accidental reboot of your PC (e.g. due to a power surge).</p>
+
+<h6 id="using-the-command-line">Using the command line</h6>
+
+<p>Otherwise, if it is not possible to use the forensic distribution, just open a command line terminal.</p>
+
+<p>In the command prompt (bash shell in DEFT) enter the commands detailed in each step listed below.</p>
+
+<p><strong>Step 1:</strong> in order to keep the record of the procedure, a log file will be elaborated in a separate USB stick.</p>
+
+<ul>
+  <li>
+    <p>List all the partitions and storage devices connected to the system. Identify all  the plugged devices (especially the internal hard disk, external drives, etc.) by entering the below command:</p>
+
+    <p><code class="highlighter-rouge">fdisk -l | less</code></p>
+
+    <p><strong>Note:</strong> all mounted partitions and devices will be in the /dev directory, typically as /dev/sdX - where X is a letter starting with <code class="highlighter-rouge">a</code> and incrementing.</p>
+  </li>
+  <li>
+    <p>Create a log directory in a separate USB stick by entering the following commands (assuming /dev/sdb1 is a partition on the USB stick):</p>
+
+    <ul>
+      <li>
+        <p>Check if the USB stick partition you want to use for your log directory is mounted by launching this command:</p>
+
+        <p><code class="highlighter-rouge">mount | grep /dev</code></p>
+      </li>
+      <li>
+        <p>The output will be a list of mounted devices with several details, including the directory where they are mounted. Check if the USB partition you want to use features in this list, and in which directory it is mounted (for example, <code class="highlighter-rouge">/dev/sdb1 on /media/user/USB</code> means that the USB stick partition <code class="highlighter-rouge">/dev/sdb1</code> is mounted in the directory <code class="highlighter-rouge">/media/user/USB</code>.</p>
+      </li>
+      <li>
+        <p>If the USB stick partition you want to use is not mounted, you can mount it with the following commands:</p>
+
+        <ul>
+          <li>
+            <p>Create a directory where you can mount the partition:</p>
+
+            <p><code class="highlighter-rouge">mkdir /mnt/[DirectoryNameUSB]</code></p>
+          </li>
+          <li>
+            <p>Mount the partition in the directory you just created:</p>
+
+            <p><code class="highlighter-rouge">mount /dev/sdb1 /mnt/[DirectoryNameUSB]</code></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Create a directory labeled with your incident name in the mounted partition:</p>
+
+        <p><code class="highlighter-rouge">mkdir /mnt/[DirectoryNameUSB]/[incidentname]</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Take a copy of the fdisk output and write it to the USB stick using a command output redirection like this:</p>
+
+    <p><code class="highlighter-rouge">fdisk -l &gt; /mnt/[DirectoryNameUSB]/[incidentname]/fdisk.txt</code></p>
+  </li>
+  <li>
+    <p>Create a directory in the destination media (assuming <code class="highlighter-rouge">/dev/sdc1</code> is the partition to write the forensic image to):</p>
+
+    <ul>
+      <li>
+        <p>If the destination media is not automatically mounted (see above on how to check), mount it with the following commands:</p>
+
+        <p><code class="highlighter-rouge">mkdir /mnt/[DirectoryNameIMAGE]</code></p>
+
+        <p><code class="highlighter-rouge">mount /dev/sdc1 /mnt/[DirectoryNameIMAGE]</code></p>
+      </li>
+      <li>
+        <p>Access the directory where you have mounted the destination media and create a directory with the incident name, then access the directory you have just created:</p>
+
+        <p><code class="highlighter-rouge">cd /mnt/[DirectoryNameIMAGE]</code></p>
+
+        <p><code class="highlighter-rouge">mkdir [incidentname]</code></p>
+
+        <p><code class="highlighter-rouge">cd [incidentname]</code></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Step 2:</strong> Write-blockers to prevent alterations.</p>
+
+<p>If you use the forensic distribution option, this step can be skipped. Otherwise, the following command should be entered to prevent any data from being written to the block device, allowing mounting of the block device with read-only access.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mount -o ro /dev/sdX  /mnt/sdX/
+</code></pre></div></div>
+
+<p>Other block devices (the USB stick for the log or the destination block device) can be mounted without taking this precaution.</p>
+
+<p><strong>Step 3:</strong>  Byte-copy the data to a data image for forensic analysis purposes.</p>
+
+<p>When all the data from a disk is duplicated exactly from the source disk and stored in a file, the resulting bit-for-bit copy is called a raw image. Raw images can be created by several different utilities and frequently will use the following file extensions: <code class="highlighter-rouge">.dd</code>, <code class="highlighter-rouge">.raw</code>, <code class="highlighter-rouge">.img</code>.</p>
+
+<p>There are different tools available to obtain this raw image file. Which one we use will depend on which are available for our operating system, and which tool best suits our needs. These tools are listed below.</p>
+
+<p><strong>WARNING!</strong> Be extremely careful when typing the command line for this program. Reversing the <strong><code class="highlighter-rouge">if</code></strong> and <strong><code class="highlighter-rouge">of</code></strong> flags, or confusing the label of the device block related to the source or destination device <strong>will cause the computer to destroy the evidence!</strong> Therefore it is imperative to check and re-check (and preferably have someone else check) the command before executing it.</p>
+
+<p>Please keep in mind that the <code class="highlighter-rouge">if=</code> flag refers to the input file, in this case, the source device or target and the <code class="highlighter-rouge">of=</code> flag refers to the output file or destination device.</p>
+
+<p>Tools for bit-by-bit copy</p>
+
+<ul>
+  <li><a href="http://forensicswiki.org/wiki/Dd"><strong>dd</strong></a> - Functional utility that  requires only minimal resources to run. This command takes as input the mass storage device and returns as output its clone within the file diskimage.img, to a file or to a mass storage device (and vice versa).
+    <ul>
+      <li>Platform: Linux, Mac</li>
+      <li>Difference from other tools: Lacks some of the useful features found in more capable imagers such as metadata gathering, error correction, piecewise hashing, and a user-friendly interface.</li>
+    </ul>
+  </li>
+  <li><strong>dd.exe</strong> - Dd.exe is a Microsoft Windows implementation of the Unix dd utility. This utility, which does not come with the operating system, is one of the tools in the Forensic Acquisition Utilities suite written by George Garner, and should be downloaded from <a href="http://www.gmgsystemsinc.com/fau/">this page</a>
+    <ul>
+      <li>Platform: Windows</li>
+      <li>Difference from other tools: Same features as dd, but this utility provides native encryption and compression capability. It functions very much like the Unix/Linux dd utility, with some notable exceptions. Dd.exe can send the output directly to a specified TCP or UDP port.</li>
+    </ul>
+  </li>
+  <li><a href="http://tools.kali.org/forensics/dc3dd"><strong>dc3dd</strong></a> - This tool is a patched version of GNU dd with added features for computer forensics and a graphical interface developed for dc3dd called Automated Image and Restore (AIR).
+    <ul>
+      <li>Platform: Linux</li>
+      <li>Difference from other tools:
+        <ul>
+          <li>On-the-fly hashing with multiple algorithms</li>
+          <li>Able to write errors directly to a file</li>
+          <li>Combined error log. Groups errors together</li>
+          <li>Pattern wiping. Wipe output files with a single hex digit or a text pattern</li>
+          <li>Verify mode</li>
+          <li>Progress reports. See the progress of the operation while it’s running</li>
+          <li>Split output. Able to split output files into fixed-size chunks</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>dcfldd</strong> - dcfldd is a fork of GNU dd, so dcfldd has its own release schedule unrelated to dd updates.
+    <ul>
+      <li>Platform: Linux</li>
+      <li>Difference from other tools:
+        <ul>
+          <li>On-the-fly hashing of the transmitted data</li>
+          <li>Progress bar of how much data has already been sent</li>
+          <li>Wiping of disks with known patterns</li>
+          <li>Verification that the image is identical to the original drive, bit-for-bit</li>
+          <li>Simultaneous output to more than one file/disk is possible</li>
+          <li>The output can be split into multiple files</li>
+          <li>Logs and data can be piped into external applications</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://www.gnu.org/software/ddrescue/"><strong>ddrescue</strong></a> - Data recovery tool. It copies data from one file or block device (hard disk, CD-ROM, etc.) to another, trying hard to rescue data in case of read errors.
+    <ul>
+      <li>Platform: Windows, Linux</li>
+      <li>Difference from other tools: ddrescue uses a sophisticated algorithm to copy data from failing drives, causing them as little additional damage as possible.</li>
+    </ul>
+  </li>
+</ul>
+
+<h6 id="command-flags-clarification">Command flags clarification</h6>
+
+<ul>
+  <li><code class="highlighter-rouge">if=</code> flag refers to the input file, the source device or target</li>
+  <li><code class="highlighter-rouge">of=</code> flag refers to the output file or destination device or data image file name (.img)</li>
+  <li><code class="highlighter-rouge">hash=</code> indicates the algorithm used to generate the hash</li>
+</ul>
+
+<h6 id="command-examples">Command examples</h6>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Tool</strong></th>
+      <th>Command Syntax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dd</td>
+      <td>dd if=/dev/sdX of=/dev/sdY/[IMAGENAME].dd</td>
+    </tr>
+    <tr>
+      <td>dc3dd</td>
+      <td>dc3dd  if=/dev/sdX of=[IMAGENAME].dd hash=md5 log=[LOGFILENAME].txt</td>
+    </tr>
+    <tr>
+      <td>ddrescue</td>
+      <td>ddrescue /dev/sdX /dev/sdY/[IMAGENAME].dd</td>
+    </tr>
+    <tr>
+      <td>dcfldd</td>
+      <td>dcfldd if=/dev/sdX of=/dev/sdY/[IMAGENAME].dd hash=sha1 (or hash=md5)</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="comments">Comments</h3>
+
+<h4 id="resources-and-further-reading">Resources and further reading:</h4>
+
+<ul>
+  <li><a href="http://www.deftlinux.net/doc/EN-deft7.pdf"><em>DEFT 7 Manual - Digital Evidence and Forensics Toolkit</em></a> [PDF]</li>
+  <li>Justin C. Klein Keane, <a href="http://sites.sas.upenn.edu/sites/default/files/kleinkeane/files/forensic-capture.pdf"><em>Capturing a Forensic Image</em></a> [PDF]</li>
+  <li>SANS Digital Forensics and Incident Response Blog: <a href="https://digital-forensics.sans.org/blog/2009/06/18/forensics-101-acquiring-an-image-with-ftk-imager/">Forensics 101: Acquiring an Image with FTK Imager</a></li>
+</ul>
